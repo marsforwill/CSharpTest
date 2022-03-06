@@ -83,5 +83,53 @@ namespace LeetCodeInCSharp
             }
             return ans;
         }
+
+        public IList<string> CellsInRange(string s)
+        {
+            var startx = s[0];
+            var endx = s[3];
+            var startd = int.Parse(s.Substring(1,1));
+            var endd = int.Parse(s.Substring(4, 1)); ;
+            var ans = new List<string>();
+            for (var i = startx; i <= endx; i++)
+            {
+                for (var j = startd; j <= endd; j++)
+                {
+                    ans.Add(i.ToString() + j.ToString());
+                }
+            }
+            return ans;
+        }
+
+        public long MinimalKSum(int[] nums, int k)
+        {
+            var l = new List<int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                l.Add(nums[i]);
+            }
+            l.Sort();
+            Int64 ans = 0;
+            var index = 0;
+            // should not use O(n)
+            for (int i = 1; k > 0; i++)
+            {
+                if (index < l.Count && i == l[index])
+                {
+                    index++;
+                    while(l[index] == l[index-1])
+                    {
+                        index++;
+                    }
+                    continue;
+                }
+                if (index >= l.Count || i < l[index])
+                {
+                    ans += i;
+                    k--;
+                }
+            }
+            return ans;
+        }
     }
 }
