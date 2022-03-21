@@ -8,7 +8,7 @@ namespace LeetCodeInCSharp
 {
 	class Program
 	{
-		// https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb33e/00000000009e7021 test for c# ocmmit
+		// https://codingcompetitions.withgoogle.com/kickstart/round/00000000008cb33e/00000000009e7021 test for c# ocmmit， only delete
 		/*
 		 input
 		    2
@@ -33,12 +33,14 @@ namespace LeetCodeInCSharp
 				int res = t.Length - s.Length;
 				for (int i = 0; i < s.Length; i++)
                 {
+					// 跳过不相等
 					while (r < t.Length && t[r] != s[i]) r++;
 					if (r == t.Length)
 					{
 						res = -1;
 						break;
 					}
+					// 相等的比较
 					r++;
 				}
 					
