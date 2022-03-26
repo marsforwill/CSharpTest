@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KickStartTest_2.cs" />
     <Compile Include="KickStartTest_1.cs" />
     <Compile Include="0305_code.cs" />
     <Compile Include="171_ExcelSheetColumnNumber.cs" />
